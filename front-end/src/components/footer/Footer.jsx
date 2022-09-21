@@ -11,15 +11,15 @@ const Footer = () => {
         </div>
         <div className="footer-section">
             <div className="footer-section-title">Contact Us</div>
-            <p>yammy@cooking.com</p>
+            <p>yummy@cooking.com</p>
             <p>+370 6060 1234</p>
             <p>Pastry str. 13, Utena, Lithuania</p>
         </div>
         <div className="footer-section">
             <div className="footer-section-title">Socials</div>
-            <p className='social-icon'><FaFacebookF/>   Facebook</p>
-            <p className='social-icon'><FaTwitter/>   Twitter</p>
-            <p className='social-icon'><FaInstagramSquare />   Instagram</p>
+            <p className='social-icon'> <a href="https://www.facebook.com"><FaFacebookF/>  Facebook</a></p>
+            <p className='social-icon'><a href="https://www.twitter.com"><FaTwitter/>  Twitter</a></p>
+            <p className='social-icon'><a href="https://www.instagram.com"><FaInstagramSquare />  Instagram</a></p>
         </div>
     </div>
   )

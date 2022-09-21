@@ -6,9 +6,10 @@ import * as  UserControler from "./controllers/UserControler.js";
 import * as RecipeControler from "./controllers/RecipeController.js"
 import multer from "multer"
 import handleValidationErrors from "./utils/handleValidationErrors.js";
+import cors from 'cors'
 
-const userName = ``
-const password = ``
+const userName = `OlgaVo`
+const password = `pass321`
 mongoose
   .connect(
     `mongodb+srv://${userName}:${password}@cluster0.4oyrd1r.mongodb.net/TrainingProject?retryWrites=true&w=majority`
@@ -32,6 +33,7 @@ const upload = multer ({ storage })
 
 app.use(express.json());
 app.use('/uploads', express.static('uplaods'))
+app.use(cors())
 
 app.post("/auth/login",loginValidation, handleValidationErrors,UserControler.login);
 

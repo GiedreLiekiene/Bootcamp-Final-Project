@@ -1,6 +1,7 @@
 import CategoriesList from "./components/categories/CategoriesList";
 import HeroSection from "./components/mainpage/HeroSection";
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -12,7 +13,10 @@ function App() {
         <HeroSection />
         <CategoriesList />
       </div>
-    </div></>
+      <Footer/>
+    </div>
+    
+    </>
     
   );
 }

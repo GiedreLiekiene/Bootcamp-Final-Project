@@ -1,0 +1,25 @@
+.contactUs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height:60vh;
+}
+.contactUs-section-title {
+    font-size: 1.5em;
+    margin-bottom: 0.7em;
+}
+
+.contactUs-section p {
+    line-height: 2em;
+}
+
+@media screen and (max-width: 768px) {
+    .contactUs-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .contactUs-section-title {
+        margin-top: 1em; 
+    }
+}

@@ -4,10 +4,11 @@
   box-sizing: border-box;
 }
 
-.body {
+body {
   font-size: var(--font-size);
   font-family: 'Roboto', sans-serif;
-  margin: 0 !important;
+  margin: 0;
+  background-color: var(--background-color);
 }
 
 .main {

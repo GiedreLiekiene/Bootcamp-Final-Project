@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
 :root {
     --background-color: #fff;
     --background-light: #fff;
@@ -12,3 +18,14 @@
 a {
     text-decoration: none;
 }
+
+.main {
+    padding-block: 3vw;
+    height: calc(100vh - 55px);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .container {
+    padding-inline: 15vw;
+    font-family: 'Roboto', sans-serif;
+  }

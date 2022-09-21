@@ -5,6 +5,18 @@
 .section .col {
         width: 50%;
     }
+.section .col .title {
+      color: #0a0a0a;
+      font-size: 3em;
+      margin-bottom: .25em;
+    }
+.section .col .info {
+      color: #575757;
+      font-size: 1em;
+      letter-spacing: 1px;
+      line-height: 1.3em;
+      margin-bottom: 1.25em;
+    }
 
 .btn {
     border: none;

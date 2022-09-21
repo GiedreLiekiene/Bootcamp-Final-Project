@@ -21,11 +21,11 @@ a {
 
 .main {
     padding-block: 3vw;
-    height: calc(100vh - 55px);
     font-family: 'Roboto', sans-serif;
   }
   
-  .container {
+.container {
     padding-inline: 12vw;
     font-family: 'Roboto', sans-serif;
-  }
+}
+

@@ -6,6 +6,7 @@
     grid-template-columns: 2fr 1fr 1fr;
     grid-gap: 1em;
     font-family: 'Roboto', sans-serif;
+    margin-top: 2em;
 }
 .footer-section p {
     margin-bottom: 0.5em;

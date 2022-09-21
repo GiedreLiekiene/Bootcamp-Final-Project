@@ -2,7 +2,8 @@ import CategoriesList from "./components/categories/CategoriesList";
 import HeroSection from "./components/mainpage/HeroSection";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import "./App.css";
+import Settings from "./pages/settingsPage/Settings";
+import './App.css';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
     <div className="App">
       <Navbar/>
       <div className="container main">
-        <HeroSection />
-        <CategoriesList />
+        <HeroSection/>
+        <CategoriesList/>
+        <Settings/>
       </div>
       <Footer/>
     </div>

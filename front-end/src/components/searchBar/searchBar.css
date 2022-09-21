@@ -1,0 +1,9 @@
+input[type="text"] {
+    width: 180px;
+    background-color: transparent;
+    transition: width 2s ease-in-out;
+}
+
+input[type="text"]:focus {
+    width: 45%;    
+}

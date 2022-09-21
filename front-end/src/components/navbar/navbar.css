@@ -1,0 +1,124 @@
+:root {
+    --background-color: #fff;
+    --background-light: #fff;
+    --shadow-color: rgba(0,0,0,0.2);
+    --primary-color: rgba(255,0,86);
+    --text-color: #0a0a0a;
+    --text-light: #575757;
+    --font-size: 16px;
+    --animation-speed: 1;
+}
+
+.navbar {
+    height: 55px;
+    box-shadow: 0 3px 6px var(--shadow-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: 0 1px 3px var(--shadow-color);
+}
+
+span {
+    color: var(--text-color);
+}
+
+.container {
+    padding-inline: 10vw;
+}
+
+.nav-links a {
+    margin-left: 1em;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.nav-links a::before {
+    content: '';
+    display: inline-block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform calc(var(--animation-speed)* 0.2s);
+}
+
+.nav-links a:hover::before {
+    transform: scaleX(1);
+}
+
+.nav-links a:active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.sidebar-btn {
+    height: 28px;
+    width: 30px;
+    position: relative;
+    display: none;
+}
+.bar {
+    border-radius: 5px;
+    height: 5px;
+    width: 100%;
+    background-color: var(--text-color);
+    position: absolute;
+    transition: transform calc(var(--animation-speed)* 0.5s);
+    z-index: 5;
+}
+.bar:nth-child(1){
+    top: 0;
+}
+.bar:nth-child(2){
+    top: 50%;
+    transform: scaleX(.8) translateY(-50%);
+}
+.bar:nth-child(3){
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.sidebar-btn.active .bar:nth-child(1) {    
+        transform-origin: center;
+        top: 50%;
+        transform:translate(0, -50%) rotate(45deg) ;
+}
+.sidebar-btn.active .bar:nth-child(2) {    
+    transform-origin: center;
+    top: 50%;
+    transform: scaleX(0) translateY(-50%);
+}
+.sidebar-btn.active .bar:nth-child(3) {    
+    transform-origin: center;
+    top: 50%;
+    transform:translate(0, -50%) rotate(-45deg) ;
+}
+
+@media screen and (max-width: 884px) {
+    .logo {
+        font-size: 1.2em;
+    }
+    .nav-links {
+        display: none;
+    }
+    .sidebar-btn {
+        display: block;
+    }
+
+}

@@ -22,6 +22,7 @@
 
 .social-icon {
     cursor: pointer;
+    color: var(--text-color);
 }
 
 @media screen and (max-width: 1280px) {

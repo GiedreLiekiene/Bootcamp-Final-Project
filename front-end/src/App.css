@@ -17,8 +17,11 @@
 
 a {
     text-decoration: none;
+    color: var(--text-color);
 }
-
+body {
+  padding-top: 55px;
+}
 .main {
     padding-block: 3vw;
     font-family: 'Roboto', sans-serif;

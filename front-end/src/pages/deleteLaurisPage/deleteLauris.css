@@ -1,0 +1,43 @@
+.deleteLauris-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deleteLauris-image-wrapper {
+    transform: scale(0.7);
+    margin: -6em 0;
+    cursor: pointer;
+}
+.deleteLauris-image-wrapper:active {
+    display: none;
+}
+
+.deleteLauris-button {
+    height: 4em;
+    width: 6em;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: .75em 1em;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px gray;
+    margin: 2em;
+    cursor: pointer;
+}
+
+.deleteLauris-button:hover {
+    box-shadow: 0 1px 3px gray;
+}
+
+@media screen and (max-width: 768px) {
+    .deleteLauris-image-wrapper {
+        transform: scale(0.5);
+        margin: -14em 0;
+    }
+}

@@ -3,7 +3,6 @@ import HeroSection from "./components/mainpage/HeroSection";
 import QuoteSection from "./components/mainpage/QuoteSection";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import Settings from "./pages/settingsPage/Settings";
 import './App.css';
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
         <HeroSection/>
         <QuoteSection />
         <CategoriesList/>
-        <Settings/>
+        
       </div>
       <Footer/>
     </div>

@@ -95,9 +95,9 @@ span {
 }
 
 .sidebar-btn.active .bar:nth-child(1) {    
-        transform-origin: center;
-        top: 50%;
-        transform:translate(0, -50%) rotate(45deg) ;
+    transform-origin: center;
+    top: 50%;
+    transform:translate(0, -50%) rotate(45deg);
 }
 .sidebar-btn.active .bar:nth-child(2) {    
     transform-origin: center;

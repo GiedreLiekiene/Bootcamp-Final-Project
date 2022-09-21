@@ -9,6 +9,7 @@
                 3px 0 5px var(--shadow-color);
     font-family: 'Roboto', sans-serif;
     animation: slide 0.3s ease-in-out;
+    z-index: 999;
 }
 
 .sidebar-link {

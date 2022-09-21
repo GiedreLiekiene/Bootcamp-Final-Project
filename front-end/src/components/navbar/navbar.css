@@ -18,6 +18,10 @@
     justify-content: space-between;
     align-items: center;
     font-family: 'Roboto', sans-serif;
+    /* position: fixed;
+    top: 0;
+    width: 100%;  */
+    z-index: 998;
 }
 
 .logo {
@@ -110,7 +114,16 @@ span {
     transform:translate(0, -50%) rotate(-45deg) ;
 }
 
-@media screen and (max-width: 884px) {
+@media screen and (max-width: 903px) {
+    .logo {
+        font-size: 1.2em;
+    }
+    .nav-links {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .logo {
         font-size: 1.2em;
     }

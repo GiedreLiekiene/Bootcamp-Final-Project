@@ -2,7 +2,9 @@
 
 .section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 3vw;
 }
 .section .col {
         width: 50%;
@@ -11,6 +13,7 @@
       color: #0a0a0a;
       font-size: 3em;
       margin-bottom: .25em;
+      font-weight: 900;
     }
 .section .col .info {
       color: #575757;

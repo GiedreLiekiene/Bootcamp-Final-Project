@@ -1,5 +1,6 @@
 import CategoriesList from "./components/categories/CategoriesList";
 import HeroSection from "./components/mainpage/HeroSection";
+import QuoteSection from "./components/mainpage/QuoteSection";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Settings from "./pages/settingsPage/Settings";
@@ -13,6 +14,7 @@ function App() {
       <Navbar/>
       <div className="container main">
         <HeroSection/>
+        <QuoteSection />
         <CategoriesList/>
         <Settings/>
       </div>

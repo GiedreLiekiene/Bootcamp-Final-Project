@@ -1,0 +1,22 @@
+.section.quote {
+    display:block;
+}
+
+.section.quote .quote-text {
+    font-size: 1.2em;
+    line-height: 6em;
+    color: #0a0a0a;
+    text-align: center;
+}
+
+.section.quote .quote-text svg {
+    color: rgb(255, 139, 158);
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
+
+.section.quote .quote-author {
+    color: #575757;
+    text-align: center;
+    margin-top: -2em;
+}

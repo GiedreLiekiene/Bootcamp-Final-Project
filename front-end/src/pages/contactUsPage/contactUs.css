@@ -8,10 +8,12 @@
 .contactUs-section-title {
     font-size: 1.5em;
     margin-bottom: 0.7em;
+    color: var(--text-color)
 }
 
 .contactUs-section p {
     line-height: 2em;
+    color: var(--text-color)
 }
 
 @media screen and (max-width: 768px) {

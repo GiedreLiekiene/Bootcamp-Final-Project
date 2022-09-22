@@ -2,6 +2,55 @@ import { response } from "express";
 import RecipeModel from "../models/Recipe.js";
 import { recipeCreateValidation } from "../validations.js";
 
+export const getAllVegetarian = async (req, res) => {
+  try {
+    const recipes = await RecipeModel.find({sections:"vegetarian"})
+  res.json(recipes);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: 'Cant get sections names'
+
+    })
+  }
+  }
+export const getAllDessert = async (req, res) => {
+  try {
+    const recipes = await RecipeModel.find({sections:"dessert"})
+  res.json(recipes);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: 'Cant get sections names'
+
+    })
+  }
+  }
+
+export const getAllLunch = async (req, res) => {
+  try {
+    const recipes = await RecipeModel.find({sections:"lunch"})
+  res.json(recipes);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: 'Cant get sections names'
+
+    })
+  }
+  }
+export const getAllBreakfast = async (req, res) => {
+  try {
+    const recipes = await RecipeModel.find({sections:"breakfast"})
+  res.json(recipes);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: 'Cant get sections names'
+
+    })
+  }
+  }
 export const getAll = async (req, res) => {
   try {
     const posts = await RecipeModel.find().populate("user").exec();
@@ -13,6 +62,18 @@ export const getAll = async (req, res) => {
     });
   }
 };
+export const getAllDinner = async (req, res) => {
+  try {
+    const recipes = await RecipeModel.find({sections:"dinner"})
+  res.json(recipes);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: 'Cant get sections names'
+
+    })
+  }
+  }
 
 export const getOne = async (req, res) => {
   try {
@@ -55,6 +116,7 @@ export const create = async (req, res) => {
     const doc = new RecipeModel({
       title: req.body.title,
       description: req.body.description,
+      sections: req.body.sections.split(','),
       imageUrl: req.body.imageUrl,
       ingredients: req.body.ingredients,
       user: req.userId,
@@ -109,9 +171,10 @@ export const update = async (req, res) => {
       },
       {
         title: req.body.title,
-        text: req.body.description,
+        description: req.body.description,
+        sections: req.body.sections.split(','),
         imageUrl: req.body.imageUrl,
-        tags: req.body.ingredients,
+        ingridients: req.body.ingredients,
         user: req.userId,
       }
     );

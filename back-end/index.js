@@ -36,11 +36,8 @@ app.use('/uploads', express.static('uplaods'))
 app.use(cors())
 
 app.post("/auth/login",loginValidation, handleValidationErrors,UserControler.login);
-
 app.post("/auth/register",registerValidation,handleValidationErrors ,UserControler.register);
-
 app.get('/auth/me', checkAuthor, UserControler.getMe)
-
 app.post('/upload', checkAuthor, upload.single('image'), (req, res) => {
     res.json({
         url: `/uploads/${req.file.originalname}`,
@@ -49,9 +46,15 @@ app.post('/upload', checkAuthor, upload.single('image'), (req, res) => {
 
 app.get('/recipes', RecipeControler.getAll)
 app.get('/recipes/:id', RecipeControler.getOne)
+app.get('/recipes/sections/vegetrian', RecipeControler.getAllVegetarian)
+app.get('/recipes/sections/lunch', RecipeControler.getAllLunch)
+app.get('/recipes/sections/dessert', RecipeControler.getAllDessert)
+app.get('/recipes/sections/dinner', RecipeControler.getAllDinner)
+app.get('/recipes/sections/breakfast', RecipeControler.getAllBreakfast)
 app.post('/recipes',checkAuthor, recipeCreateValidation, handleValidationErrors,  RecipeControler.create)
 app.delete('/recipes/:id',checkAuthor, RecipeControler.remove)
 app.patch('/recipes/:id',checkAuthor, handleValidationErrors, RecipeControler.update)
+
 
 app.listen(PORT, (error) => {
   error ? console.log(error) : console.log(`Server started on ${PORT}`);

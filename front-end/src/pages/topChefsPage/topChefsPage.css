@@ -9,6 +9,10 @@
     margin-top: 2em; 
 }
 
+.chefs-section-title {
+    color: var(--text-color)
+}
+
 @media screen and (max-width: 768px) {
     .top-chefs-container {
         grid-template-columns: repeat(1, 1fr);

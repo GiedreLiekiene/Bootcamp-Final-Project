@@ -56,14 +56,6 @@ const TopChefsPage = () => {
     <div className='chefs-section'> 
         <h1 className='chefs-section-title'>Our Top Chefs</h1>
         <div className='top-chefs-container'>
-            {/* <ChefCard />
-            <ChefCard />
-            <ChefCard />
-            <ChefCard />
-            <ChefCard />
-            <ChefCard />
-            <ChefCard />
-            <ChefCard /> */}
             { chefs.map((chef) => <ChefCard key={chef.name} chef={chef}/>) }
         </div>
     </div>

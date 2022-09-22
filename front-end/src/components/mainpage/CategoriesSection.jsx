@@ -17,8 +17,8 @@ const CategoryItem = ({photo, name, link}) => {
 
 const CategoriesList = () => {
   return (
-    <div class="categories-list-container">
-      <div class="categories-list">
+    <div className="categories-list-container">
+      <div className="categories-list">
         <ol>
         <CategoryItem photo="/img/gallery/img_1.jpg" name="Breakfast" link="recipes?category=Breakfast" key="1" />
         <CategoryItem photo="/img/gallery/img_2.jpg" name="Lunch" link="recipes?category=Lunch" key="2" />

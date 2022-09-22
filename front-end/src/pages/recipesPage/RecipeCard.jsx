@@ -1,10 +1,11 @@
 import "./recipeCard.css";
 import CustomImage from '../../components/CustomImage';
+import { ServerUrl } from "../../config";
 
 const RecipeCard = ({recipe}) => {
   return (
     <div className="recipe-card">
-        <CustomImage imgSrc={recipe.image} pt="65%"/>
+        <CustomImage imgSrc={ServerUrl + recipe.imageUrl} pt="65%"/>
         <div className="recipe-card-info">
             <img className="author-img" src={recipe.authorImg} alt="" />
             <p className="recipe-title">{recipe.title}</p>

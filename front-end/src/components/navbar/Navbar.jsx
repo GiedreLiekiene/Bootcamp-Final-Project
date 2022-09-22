@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 
 import { useState } from 'react';
 import Sidebar from '../sidebar/Sidebar';
-import { faHome, faList, faPen, faCog, faKey, faLock, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faBowlRice, faList, faPen, faCog, faKey, faLock, faPhone } from "@fortawesome/free-solid-svg-icons";
 import './navbar.css'
 
 const Navbar = () => {
@@ -10,9 +10,9 @@ const Navbar = () => {
     const location = useLocation();
     const links = [
         {
-            name: "Home",
-            path: "/",
-            icon: faHome,
+            name: "Top Chefs",
+            path: "/topchefs",
+            icon: faBowlRice,
         },
         {
             name: "Recipes",

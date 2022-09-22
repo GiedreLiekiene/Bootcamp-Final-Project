@@ -9,7 +9,12 @@ const RecipeSchema = new mongoose.Schema(
     description: {
       type: String,
       required: true,
-      //unique: true,
+      unique: true,
+    },
+    sections: {
+      type: Array,
+      default: [],
+      required: true,
     },
     ingredients: {
       type: Array,

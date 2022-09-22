@@ -16,6 +16,7 @@ import ContactUsPage from "./pages/contactUsPage/ContactUs";
 import LogInPage from "./pages/logInPage/LogInPage";
 import SignUpPage from "./pages/signUpPage/SignUpPage";
 import SettingsPage from "./pages/settingsPage/Settings";
+import TopChefsPage from "./pages/topChefsPage/TopChefsPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <div className="container main">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/topchefs" element={<TopChefsPage />} />
           <Route path="/recipes" element={<RecipesPage />} />
           <Route path="/submit" element={<SubmitPage />} />
           <Route path="/contacts" element={<ContactUsPage />} />

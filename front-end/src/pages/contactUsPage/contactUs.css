@@ -3,21 +3,25 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height:60vh;
+    height: calc(65vh - 55px );
+    
 }
 .contactUs-section-title {
     font-size: 1.5em;
     margin-bottom: 0.7em;
+    color: var(--text-color)
 }
 
 .contactUs-section p {
     line-height: 2em;
+    color: var(--text-color)
 }
 
 @media screen and (max-width: 768px) {
     .contactUs-container {
         display: flex;
         flex-direction: column;
+        height: calc(90vh - 55px );
     }
     .contactUs-section-title {
         margin-top: 1em; 

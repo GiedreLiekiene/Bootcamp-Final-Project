@@ -172,7 +172,7 @@ export const update = async (req, res) => {
       {
         title: req.body.title,
         description: req.body.description,
-        sections: req.body.sections.split(','),
+        sections: req.body.sections,
         imageUrl: req.body.imageUrl,
         ingridients: req.body.ingredients,
         user: req.userId,

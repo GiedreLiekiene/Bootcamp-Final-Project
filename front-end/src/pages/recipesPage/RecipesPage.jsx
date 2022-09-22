@@ -1,10 +1,11 @@
+import { useState, useEffect } from 'react'
 import PreviousSearches from '../../components/recipespage/PreviousSearches';
 import RecipeCard from './RecipeCard';
 import CategoriesSection from '../../components/mainpage/CategoriesSection';
 import './recipesPage.css';
 
 const RecipesPage = () => {
-  const recipes = [
+  const recipes_ = [
     {
       title: "Green salad",
       image: "/img/gallery/img_1.jpg",
@@ -46,6 +47,19 @@ const RecipesPage = () => {
       authorImg: "/img/top-chefs/img_8.jpg",
     }
   ].sort(() => Math.random() - 0.5);
+
+  const [recipes, setRecipes] = useState([]);
+  useEffect(() => {
+    const apiUrl = "http://localhost:3001/recipes";
+
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        setRecipes(response);        
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <>

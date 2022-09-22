@@ -56,7 +56,7 @@ const Navbar = () => {
         <Link to="/" className='logo'>Yum<span>my Coo</span>king</Link>
         <div className='nav-links'>
                 {links.map(link => (
-                    <Link className={location.pathname == link.path ? "active" : "" } to={link.path} key={link.name}>{link.name}</Link>
+                    <Link className={location.pathname === link.path ? "active" : "" } to={link.path} key={link.name}>{link.name}</Link>
                 ))}
         </div> 
         <div onClick={() => setShowSidear(!showSidebar)} className={showSidebar ? 'sidebar-btn active' : 'sidebar-btn'}>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import { useState } from 'react';
 import Sidebar from '../sidebar/Sidebar';
 import { faHome, faList, faPen, faCog, faKey, faLock, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -50,10 +52,10 @@ const Navbar = () => {
   return (
     <>
     <div className='navbar container'>
-        <a href="#!" className='logo'>Yum<span>my Coo</span>king</a>
+        <Link to="/" className='logo'>Yum<span>my Coo</span>king</Link>
         <div className='nav-links'>
                 {links.map(link => (
-                    <a href="#!" key={link.name}>{link.name}</a>
+                    <Link to={link.path} key={link.name}>{link.name}</Link>
                 ))}
         </div> 
         <div onClick={() => setShowSidear(!showSidebar)} className={showSidebar ? 'sidebar-btn active' : 'sidebar-btn'}>

@@ -2,7 +2,9 @@
 
 .section {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 3vw;
 }
 .section .col {
         width: 50%;
@@ -11,6 +13,7 @@
       color: #0a0a0a;
       font-size: 3em;
       margin-bottom: .25em;
+      font-weight: 900;
     }
 .section .col .info {
       color: #575757;
@@ -29,6 +32,18 @@
     gap: 1.75vw;
 }
 
+@media screen and (max-width: 768px) {
+    .container {
+        padding-inline: 6vw;
+    }
+    .section .col{
+      width: 100%;
+      padding: 0 !important;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  }
+
 @keyframes popOut {
     from{
         transform: scale(0);
@@ -41,8 +56,37 @@
 }
 
 .section.hero .gallery .custom-image{
-    transform: scale(0.1);
-    animation: 1.3s popOut forwards;
+    border-radius: 3px;
+    overflow: hidden;
+    transform: scale(0);
+    opacity: 0;
+    animation: .5s popOut forwards;
+    
+}
+
+.section.hero .gallery .custom-image:nth-child(2){
+    animation-delay: 0.1s;
+}
+.section.hero .gallery .custom-image:nth-child(3){
+    animation-delay: 0.2s;
+}
+.section.hero .gallery .custom-image:nth-child(6){
+    animation-delay: 0.3s;
+}
+.section.hero .gallery .custom-image:nth-child(9){
+    animation-delay: 0.4s;
+}
+.section.hero .gallery .custom-image:nth-child(8){
+    animation-delay: 0.5s;
+}
+.section.hero .gallery .custom-image:nth-child(7){
+    animation-delay: 0.6s;
+}
+.section.hero .gallery .custom-image:nth-child(4){
+    animation-delay: 0.7s;
+}
+.section.hero .gallery .custom-image:nth-child(5){
+    animation-delay: 0.8s;
 }
     
 .btn {

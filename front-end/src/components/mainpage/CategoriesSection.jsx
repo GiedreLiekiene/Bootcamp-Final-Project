@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import "./categoriesList.css";
+import "./categoriesSection.css";
 
 const CategoryItem = ({photo, name}) => {
   return (

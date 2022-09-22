@@ -1,0 +1,11 @@
+.recipes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 1.5em;
+}
+
+.reciper-card {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px var(--shadow-color);
+}

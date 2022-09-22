@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import "./categoriesSection.css";
 
-const CategoryItem = ({photo, name}) => {
+const CategoryItem = ({photo, name, link}) => {
   return (
     <li>
         <a
             className="category-button"
-            href={photo.links.html}
+            href={link}
         >
-            <img src={photo.urls.regular} alt="" />
+            <img src={photo} alt="" />
             <span className="category-name">{name}</span>
         </a>
     </li>
@@ -16,40 +16,26 @@ const CategoryItem = ({photo, name}) => {
 }
 
 const CategoriesList = () => {
-  const [photos, getPhotos] = useState([]);
-  useEffect(() => {
-    const count = 8;
-    const apiKey = `EDmqrhjFrU2KqPuME5F2pfpc22qYNehs3w5VIEvmbns`;
-    let query = "food";
-    let orientation = "squarish";
-    const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&orientation=${orientation}&query=${query}`;
-
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((response) => {
-        getPhotos(response);        
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
   let categoryNames = [
-    "Dinner",
-    "Vegetarian",
-    "Healthy",
-    "Vegan",
-    "Dessert",
-    "Soups",
-    "Salads",
     "Breakfast",
+    "Lunch",
+    "Dinner",
   ];  
+
+  let categoryImages = [
+    "http://gfdfgfd",
+    "http://gfdfgfd",
+    "http://gfdfgfd",
+  ];  
+
 
   return (
     <div class="categories-list-container">
       <div class="categories-list">
         <ol>
-          {photos.map((photo, index) => 
-            <CategoryItem photo={photo} name={categoryNames[index]} key={index} />
-        )}
+        <CategoryItem photo="/img/gallery/img_1.jpg" name="Breakfast" link="recipes?category=Breakfast" key="1" />
+        <CategoryItem photo="http://unspahslashg.com/buotragfdsfdsgdsg.jpg" name="Breakfast" link="" key="2" />
+          
         </ol>    
       </div>  
     </div>

@@ -10,13 +10,13 @@
         width: 50%;
     }
 .section .col .title {
-      color: #0a0a0a;
+      color: var(--text-color);
       font-size: 3em;
       margin-bottom: .25em;
       font-weight: 900;
     }
 .section .col .info {
-      color: #575757;
+      color: var(--text-color);
       font-size: 1em;
       letter-spacing: 1px;
       line-height: 1.3em;

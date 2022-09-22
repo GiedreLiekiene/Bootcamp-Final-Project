@@ -13,7 +13,7 @@ import HomePage from "./pages/homePage/HomePage";
 import RecipesPage from "./pages/recipesPage/RecipesPage";
 import SubmitPage from "./pages/submitPage/SubmitPage";
 import ContactUsPage from "./pages/contactUsPage/ContactUs";
-import LogInPage from "./pages/loginPage/LogInPage";
+import LogInPage from "./pages/logInPage/LogInPage";
 import SignUpPage from "./pages/signUpPage/SignUpPage";
 import SettingsPage from "./pages/settingsPage/Settings";
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import "./categoriesSection.css";
 
 const CategoryItem = ({photo, name, link}) => {
@@ -16,22 +16,6 @@ const CategoryItem = ({photo, name, link}) => {
 }
 
 const CategoriesList = () => {
-  let categoryNames = [
-    "Breakfast",
-    "Lunch",
-    "Dinner",
-    "Vegetarian",
-    "Healthy",
-    "Dessert",
-  ];  
-
-  let categoryImages = [
-    "http://gfdfgfd",
-    "http://gfdfgfd",
-    "http://gfdfgfd",
-  ];  
-
-
   return (
     <div class="categories-list-container">
       <div class="categories-list">

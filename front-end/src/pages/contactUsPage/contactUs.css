@@ -3,7 +3,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: calc(100vh - 55px );
+    height: calc(65vh - 55px );
+    
 }
 .contactUs-section-title {
     font-size: 1.5em;
@@ -20,6 +21,7 @@
     .contactUs-container {
         display: flex;
         flex-direction: column;
+        height: calc(90vh - 55px );
     }
     .contactUs-section-title {
         margin-top: 1em; 

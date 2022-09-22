@@ -13,12 +13,10 @@
     color: var(--text-color)
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
     .top-chefs-container {
         grid-template-columns: repeat(1, 1fr);
 
-    }
-
-    
+    }  
     
 }

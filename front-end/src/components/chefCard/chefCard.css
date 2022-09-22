@@ -45,7 +45,7 @@
     color: #ff0056;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
     .chef-card {
         box-shadow: 0 5px 10px var(--shadow-color);
     }

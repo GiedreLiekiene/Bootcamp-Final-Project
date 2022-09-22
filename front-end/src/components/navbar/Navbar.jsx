@@ -11,7 +11,7 @@ const Navbar = () => {
     const links = [
         {
             name: "Top Chefs",
-            path: "/",
+            path: "/topchefs",
             icon: faBowlRice,
         },
         {

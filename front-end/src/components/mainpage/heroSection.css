@@ -32,6 +32,18 @@
     gap: 1.75vw;
 }
 
+@media screen and (max-width: 768px) {
+    .container {
+        padding-inline: 6vw;
+    }
+    .section .col{
+      width: 100%;
+      padding: 0 !important;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  }
+
 @keyframes popOut {
     from{
         transform: scale(0);

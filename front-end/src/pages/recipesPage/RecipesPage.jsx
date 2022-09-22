@@ -50,13 +50,14 @@ const RecipesPage = () => {
   return (
     <>
     <PreviousSearches />
+    <CategoriesSection />
     <div className='recipes-container'>
       {/* <RecipeCard /> */}
       {recipes.map((recipe, index) => (
         <RecipeCard key={index} recipe={recipe} />
       ))}
     </div>
-    <CategoriesSection />
+    
     </>
   )
 }

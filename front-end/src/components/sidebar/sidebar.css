@@ -38,6 +38,11 @@
     margin-right: 0.5em;
 }
 
+.logo {
+    padding-left: 1.4em;
+    line-height: 2.7em;
+}
+
 @keyframes slide{
     from {
         transform: translateX(-100%);

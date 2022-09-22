@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import PreviousSearches from '../../components/recipespage/PreviousSearches';
 import RecipeCard from './RecipeCard';
 import CategoriesSection from '../../components/mainpage/CategoriesSection';
@@ -6,10 +7,15 @@ import './recipesPage.css';
 import { ServerUrl } from '../../config';
 
 const RecipesPage = () => {
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get("category");
 
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    const apiUrl = `${ServerUrl}/recipes`
+    let apiUrl = `${ServerUrl}/recipes`
+    if (category) {
+      apiUrl += `/sections/${category}`
+    }
 
     fetch(apiUrl)
       .then((response) => response.json())
@@ -20,7 +26,7 @@ const RecipesPage = () => {
         setRecipes(response);        
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [category]);
 
   return (
     <>

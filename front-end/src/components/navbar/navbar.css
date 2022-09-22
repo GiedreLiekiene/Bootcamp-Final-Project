@@ -72,7 +72,7 @@ span {
 }
 
 .nav-links .active {
-    color: rgb(255, 139, 158);
+    color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -119,7 +119,7 @@ span {
     transform:translate(0, -50%) rotate(-45deg) ;
 }
 
-@media screen and (max-width: 903px) {
+@media screen and (max-width: 1220px) {
     .logo {
         font-size: 1.2em;
     }
@@ -128,7 +128,16 @@ span {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
+    .logo {
+        font-size: 1.2em;
+    }
+    .nav-links {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width: 798px) {
     .logo {
         font-size: 1.2em;
     }

@@ -71,6 +71,11 @@ span {
     font-weight: bold;
 }
 
+.nav-links .active {
+    color: rgb(255, 139, 158);
+    font-weight: bold;
+}
+
 .sidebar-btn {
     height: 28px;
     width: 30px;

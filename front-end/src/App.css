@@ -44,18 +44,6 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-      padding-inline: 6vw;
-  }
-  .section .col{
-    width: 100%;
-    padding: 0 !important;
-    text-align: center;
-    margin-bottom: 2em;
-  }
-}
-
 @media screen and (max-width: 480px) {
   .container {
       padding-inline: 3vw;

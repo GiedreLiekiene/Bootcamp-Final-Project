@@ -6,7 +6,7 @@
 .section.quote .quote-text {
     font-size: 1.2em;
     line-height: 2em;
-    color: #0a0a0a;
+    color: var(--text-color);
     text-align: center;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .section.quote .quote-author {
-    color: #575757;
+    color: var(--text-color);
     text-align: center;
     margin-top: 1em;
 }

@@ -28,9 +28,19 @@
     background-color: rgba(0,0,0,0.05);
 }
 
+.sidebar-link.active {
+    color: rgb(255, 139, 158);
+    font-weight: bold;
+}
+
 .sidebar-link svg {
     width: 1.2em;
     margin-right: 0.5em;
+}
+
+.logo {
+    padding-left: 1.4em;
+    line-height: 2.7em;
 }
 
 @keyframes slide{

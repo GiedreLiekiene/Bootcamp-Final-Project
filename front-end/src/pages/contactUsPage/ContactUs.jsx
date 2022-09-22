@@ -5,7 +5,7 @@ const ContactUs = () => {
   return (
     <div className='contactUs-container'>
         <div className="contactUs-section">
-            <div className="contactUs-section-title">Contact Us</div>
+            <h1 className="contactUs-section-title">Contact Us</h1>
             <p>yummy@cooking.com</p>
             <p>+370 6060 1234</p>
             <p><div className="mapouter">
@@ -15,7 +15,7 @@ const ContactUs = () => {
                     </div>Pastry str. 13, Utena, Lithuania</p>
         </div>
         <div className="contactUs-section">
-            <div className="contactUs-section-title">Socials</div>
+            <h1 className="contactUs-section-title">Socials</h1>
             <p className='social-icon'> <a href="https://www.facebook.com"><FaFacebookF/>  Facebook</a></p>
             <p className='social-icon'><a href="https://www.twitter.com"><FaTwitter/>  Twitter</a></p>
             <p className='social-icon'><a href="https://www.instagram.com"><FaInstagramSquare />  Instagram</a></p>

@@ -46,7 +46,7 @@ app.post('/upload', checkAuthor, upload.single('image'), (req, res) => {
 
 app.get('/recipes', RecipeControler.getAll)
 app.get('/recipes/:id', RecipeControler.getOne)
-app.get('/recipes/sections/vegetrian', RecipeControler.getAllVegetarian)
+app.get('/recipes/sections/vegetarian', RecipeControler.getAllVegetarian)
 app.get('/recipes/sections/lunch', RecipeControler.getAllLunch)
 app.get('/recipes/sections/dessert', RecipeControler.getAllDessert)
 app.get('/recipes/sections/dinner', RecipeControler.getAllDinner)

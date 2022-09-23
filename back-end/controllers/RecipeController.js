@@ -116,7 +116,7 @@ export const create = async (req, res) => {
     const doc = new RecipeModel({
       title: req.body.title,
       description: req.body.description,
-      sections: req.body.sections.split(','),
+      sections: req.body.sections,
       imageUrl: req.body.imageUrl,
       ingredients: req.body.ingredients,
       user: req.userId,

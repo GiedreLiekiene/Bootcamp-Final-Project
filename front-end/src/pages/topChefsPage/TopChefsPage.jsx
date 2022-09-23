@@ -1,5 +1,6 @@
 import './topChefsPage.css'
 import ChefCard from '../../components/chefCard/ChefCard'
+import { Link } from "react-router-dom"
 
 const TopChefsPage = () => {
   const chefs = [
@@ -52,13 +53,20 @@ const TopChefsPage = () => {
       cuisine: "Lithuanian"
     }
   ]
+  
   return (
+    <>
     <div className='chefs-section'> 
         <h1 className='chefs-section-title'>Our Top Chefs</h1>
         <div className='top-chefs-container'>
             { chefs.map((chef) => <ChefCard key={chef.name} chef={chef}/>) }
         </div>
     </div>
+    <div className='btn-wrapper'>
+      <Link to="/deletelauris" ><button className='delete-lauris'>Would you like to delete Lauris?</button></Link>
+    </div>
+    
+    </>
   )
 }
 

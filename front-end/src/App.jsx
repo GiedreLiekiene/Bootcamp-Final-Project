@@ -33,8 +33,9 @@ function App() {
           <Route path="/login" element={<LogInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/deletelauris" element={<DeleteLauris/>} />
         </Routes>
-      </div>
+      </div>      
       <Footer/>
     </Router>
     

@@ -32,10 +32,11 @@ cb(null, 'uploads');
 const upload = multer ({ storage })
 
 app.use(express.json());
-app.use('/uploads', express.static('uplaods'))
+app.use("/uploads", express.static("uploads"));
 app.use(cors())
 
 app.post("/auth/login",loginValidation, handleValidationErrors,UserControler.login);
+app.patch("/auth/:id", checkAuthor, UserControler.updateUser);
 app.post("/auth/register",registerValidation,handleValidationErrors ,UserControler.register);
 app.get('/auth/me', checkAuthor, UserControler.getMe)
 app.post('/upload', checkAuthor, upload.single('image'), (req, res) => {
@@ -46,7 +47,7 @@ app.post('/upload', checkAuthor, upload.single('image'), (req, res) => {
 
 app.get('/recipes', RecipeControler.getAll)
 app.get('/recipes/:id', RecipeControler.getOne)
-app.get('/recipes/sections/vegetrian', RecipeControler.getAllVegetarian)
+app.get('/recipes/sections/vegetarian', RecipeControler.getAllVegetarian)
 app.get('/recipes/sections/lunch', RecipeControler.getAllLunch)
 app.get('/recipes/sections/dessert', RecipeControler.getAllDessert)
 app.get('/recipes/sections/dinner', RecipeControler.getAllDinner)

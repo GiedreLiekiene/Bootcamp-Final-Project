@@ -97,4 +97,27 @@ export const getMe = async(req, res) => {
     
 }catch (err) {}
 };
+export const updateUser = async (req, res) => {
+  try {
+    const userId = req.body.id;
+    await UserModel.updateOne(
+      {
+        id: userId,
+       },
+      {
+        email: req.body.email,
+        fullName: req.body.fullName,
+        avatarUrl: req.body.avatarUrl,
+        //passwordHash: hash,
+      });
+    res.json({
+      success: true,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: "Can't update user",
+    });
+  }
+};
   

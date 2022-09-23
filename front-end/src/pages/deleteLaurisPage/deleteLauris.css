@@ -5,8 +5,8 @@
 }
 
 .deleteLauris-image-wrapper {
-    transform: scale(0.7);
-    margin: -6em 0;
+    transform: scale(0.5);
+    margin: -14em 0;
     cursor: pointer;
 }
 .deleteLauris-image-wrapper:active {
@@ -14,7 +14,7 @@
 }
 
 .deleteLauris-button {
-    height: 4em;
+    height: 5em;
     width: 6em;
     border: none;
     outline: none;
@@ -33,11 +33,4 @@
 
 .deleteLauris-button:hover {
     box-shadow: 0 1px 3px gray;
-}
-
-@media screen and (max-width: 768px) {
-    .deleteLauris-image-wrapper {
-        transform: scale(0.5);
-        margin: -14em 0;
-    }
 }

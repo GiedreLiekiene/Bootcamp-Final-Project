@@ -4,7 +4,7 @@ import { recipeCreateValidation } from "../validations.js";
 
 export const getAllVegetarian = async (req, res) => {
   try {
-    const recipes = await RecipeModel.find({sections:"vegetarian"})
+    const recipes = await RecipeModel.find({sections:"vegetarian"}).populate("user").exec()
   res.json(recipes);
   } catch (err) {
     console.log(err);
@@ -16,7 +16,7 @@ export const getAllVegetarian = async (req, res) => {
   }
 export const getAllDessert = async (req, res) => {
   try {
-    const recipes = await RecipeModel.find({sections:"dessert"})
+    const recipes = await RecipeModel.find({sections:"dessert"}).populate("user").exec()
   res.json(recipes);
   } catch (err) {
     console.log(err);
@@ -29,7 +29,7 @@ export const getAllDessert = async (req, res) => {
 
 export const getAllLunch = async (req, res) => {
   try {
-    const recipes = await RecipeModel.find({sections:"lunch"})
+    const recipes = await RecipeModel.find({sections:"lunch"}).populate("user").exec()
   res.json(recipes);
   } catch (err) {
     console.log(err);
@@ -39,18 +39,18 @@ export const getAllLunch = async (req, res) => {
     })
   }
   }
-export const getAllBreakfast = async (req, res) => {
-  try {
-    const recipes = await RecipeModel.find({sections:"breakfast"})
-  res.json(recipes);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({
-      message: 'Cant get sections names'
-
-    })
-  }
-  }
+  export const getAllBreakfast = async (req, res) => {
+    try {
+      const recipes = await RecipeModel.find({sections:"breakfast"}).populate("user").exec()
+    res.json(recipes);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        message: 'Cant get sections names'
+  
+      })
+    }
+    }
 export const getAll = async (req, res) => {
   try {
     const posts = await RecipeModel.find().populate("user").exec();
@@ -64,7 +64,7 @@ export const getAll = async (req, res) => {
 };
 export const getAllDinner = async (req, res) => {
   try {
-    const recipes = await RecipeModel.find({sections:"dinner"})
+    const recipes = await RecipeModel.find({sections:"dinner"}).populate("user").exec();
   res.json(recipes);
   } catch (err) {
     console.log(err);

@@ -22,7 +22,7 @@ const CategoriesList = () => {
         <ol>
         <CategoryItem photo="/img/gallery/img_1.jpg" name="Breakfast" link="recipes?category=breakfast" key="1" />
         <CategoryItem photo="/img/gallery/img_2.jpg" name="Lunch" link="recipes?category=lunch" key="2" />
-        <CategoryItem photo="/img/gallery/img_3.jpg" name="Dinner" link="recipes?category=Dinner" key="3" />
+        <CategoryItem photo="/img/gallery/img_3.jpg" name="Dinner" link="recipes?category=dinner" key="3" />
         <CategoryItem photo="/img/gallery/img_4.jpg" name="Vegetarian" link="recipes?category=vegetarian" key="4" />
         <CategoryItem photo="/img/gallery/img_6.jpg" name="Dessert" link="recipes?category=dessert" key="6" />
         </ol>    

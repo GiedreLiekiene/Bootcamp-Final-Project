@@ -14,7 +14,7 @@ body {
 }
 .options-container {
     box-shadow: 0 5px 10px var(--shadow-color);
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 5px;
     border-left: 0.5em solid var(--primary-color);
     background-color: var(--background-light);
@@ -24,11 +24,11 @@ body {
 .settings-section-h2 {
     font-size: 1.75em;
     color: var(--text-color);
-
+    margin: 0.5em
 }
 .option {
-    height: 3.5em;
-    width: 3.5em;
+    height: 3em;
+    width: 3em;
     box-shadow: 0 3px 6px var(--shadow-color);
     border-radius: 5px;
     display: flex;
@@ -43,12 +43,12 @@ body {
     background-color:rgb(29, 29, 29);
 }
 .check {
-    height: 2.5em;
-    width: 2.5em;
+    height: 2em;
+    width: 2em;
     background-color: var(--primary-color);
     border-radius: 50%;
     text-align: center;
-    line-height: 2.5em;
+    line-height: 2em;
     font-size: 1.2em;
     box-shadow: 0 2px 5px var(--shadow-color);
 }

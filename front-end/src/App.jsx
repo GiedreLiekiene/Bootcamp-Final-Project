@@ -17,6 +17,7 @@ import LogInPage from "./pages/logInPage/LogInPage";
 import SignUpPage from "./pages/signUpPage/SignUpPage";
 import SettingsPage from "./pages/settingsPage/Settings";
 import TopChefsPage from "./pages/topChefsPage/TopChefsPage";
+import DeleteLauris from "./pages/deleteLaurisPage/DeleteLauris";
 
 function App() {
   return (

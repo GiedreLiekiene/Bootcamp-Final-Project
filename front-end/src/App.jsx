@@ -35,7 +35,7 @@ function App() {
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/deletelauris" element={<DeleteLauris/>} />
         </Routes>
-      </div>      
+      </div>    
       <Footer/>
     </Router>
     

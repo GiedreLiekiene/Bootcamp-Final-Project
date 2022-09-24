@@ -11,9 +11,9 @@ const ChefCard = ({chef}) => {
             <p className='chef-recipe-count'>Recipes: <b>{chef.recipeCount}</b></p>
             <p className='chef-cuisine'>Cuisine: <b>{chef.cuisine}</b></p>
             <p className='chef-icons'>
-                <FontAwesomeIcon icon={faFacebook}/>
-                <FontAwesomeIcon icon={faTwitter}/>
-                <FontAwesomeIcon icon={faInstagram}/>
+              <a className='facebook-icon' href="https://www.facebook.com"><FontAwesomeIcon icon={faFacebook}/></a>
+              <a className='twitter-icon' href="https://www.twitter.com"><FontAwesomeIcon icon={faTwitter}/></a>  
+              <a className='instagram-icon' href="https://www.instagram.com"><FontAwesomeIcon icon={faInstagram}/></a> 
             </p>
         </div>
     </div>

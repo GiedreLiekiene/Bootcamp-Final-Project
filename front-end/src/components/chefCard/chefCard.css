@@ -35,13 +35,13 @@
 .chef-icons svg {
     margin-left: 0.5em;
 }
-.chef-icons svg:nth-child(1) {
+.facebook-icon {
     color: #0063f7;
 }
-.chef-icons svg:nth-child(2) {
+.twitter-icon {
     color: #13b4ff;
 }
-.chef-icons svg:nth-child(3) {
+.instagram-icon {
     color: #ff0056;
 }
 

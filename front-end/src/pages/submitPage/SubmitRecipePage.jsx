@@ -1,7 +1,7 @@
-import "./submitPage.css"
+import "./submitRecipePage.css"
 import SubmitRecipeForm from "../../components/submitForm/SubmitRecipeForm";
 
-const SubmitPage = () => {
+const SubmitRecipePage = () => {
   return (
     <div className='submit'>
       <div className='submit-wrapper'>
@@ -15,4 +15,4 @@ const SubmitPage = () => {
   )
 }
 
-export default SubmitPage
+export default SubmitRecipePage

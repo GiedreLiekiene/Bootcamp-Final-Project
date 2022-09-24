@@ -1,34 +1,35 @@
+import { useState } from "react";
+import { ServerUrl } from "../../config";
 import "./submitRecipeForm.css";
 
-const SubmitRecipeForm = ({}) => {
-  return (
-    <div className="submit-input">
-      <label>Email</label>
-      <input type="text" placeholder="Enter your email"></input>
-      <label>Recipe Name</label>
-      <input type="text" placeholder="Enter recipe name"></input>
-      <label>Description</label>
-      <input type="text" placeholder="Describe ingredients"></input>
-      <label>Ingredients</label>
-      <input type="text" placeholder="Describe your recipe"></input>
-      <button className="submit-btn">Submit Recipe</button>
-    </div>
-  );
-};
-
-const SubmitRecipeForm2 = ({
+const SubmitRecipeForm = ({
 }) => {
-  const [requestBody, setRequestBody] = useState({});
+  // TODO : 
+  // * remember token and userId after login (and signup?) - use cookies???
+  // * send token&userId in this form
+  // * send recipe photo in this form (extra request for upload)
+  // * send sections in this form - needs UI with checkboxes
+  // * do not allow submit a recipie if you don't have a token - send to logic/singup
+  // TODO :
+  // * send user photo in signup form
 
+  const [requestBody, setRequestBody] = useState({
+    userId: "632f73336d3fe7601c3ee338",
+    imageUrl: "/uploads/Baja-Pork-takos.jpeg",
+    sections: ["breakfast"]
+  });
+
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzJmNzMzMzZkM2ZlNzYwMWMzZWUzMzgiLCJpYXQiOjE2NjQwNTczMzksImV4cCI6MTY2NjY0OTMzOX0.my4hUNg1dI6Up5w-Qw6GvEpeqigzYDM9ijXJIQh3Gfo"
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(requestBody);
-    const url = `${ServerUrl}/auth/register`;
+    const url = `${ServerUrl}/recipes`;
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(requestBody),
       headers: {
         "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
       },
     });
     if (response.ok) {
@@ -44,22 +45,29 @@ const SubmitRecipeForm2 = ({
   };
   return (
     <form onSubmit={handleSubmit} className="signup-input">
-      <label>{email}</label>
+      <label>Recipe Name</label>
       <input
         onChange={inputChangeHandler}
-        name="email"
+        name="title"
         type="text"
-        placeholder="Enter your email"
+        placeholder="Enter recipe name"
       ></input>
-      <label>{password}</label>
+      <label>Ingredients</label>
       <input
         onChange={inputChangeHandler}
-        name="password"
-        type="password"
-        placeholder="Enter your password"
+        name="ingredients"
+        type="text"
+        placeholder="Enter ingredients"
+      ></input>
+      <label>Description</label>
+      <input
+        onChange={inputChangeHandler}
+        name="description"
+        type="text"
+        placeholder="Describe your recipe"
       ></input>
       <button type="submit" className="signup-btn">
-        {buttonText}
+        Submit Recipe
       </button>
     </form>
   );

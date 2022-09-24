@@ -3,6 +3,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const PreviousSearches = () => {
     const searches = [ 'pizza', 'burger', 'cookies', 'juice', 'salad', 'soup', 'lasagna', 'dessert']
+
   return (
     <div className="previous-searches section">
       <h2>Previous Searches</h2>

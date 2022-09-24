@@ -1,44 +1,77 @@
 import "./inputForm.css";
-// import { ServerUrl } from '../../config';
-// import { useState, useEffect } from 'react';
+import { ServerUrl } from "../../config";
+import { useState } from "react";
 
 const InputForm = ({
   fullName,
   email,
-  passwordHash,
+  password,
   avatarUrl,
   buttonText,
   isSignUp,
 }) => {
-  // const[user, setUser] = useState([]);
+  const [requestBody, setRequestBody] = useState({});
 
-//   useEffect( () => {
-//      fetch (`${ServerUrl}/auth/register`)
-//     .then((res) => res.json())
-//     .then((json)=> setUser(json.user));
-//   }, []);
-  
-//   const handleChange = (e) => {
-//     setUser((prev)=> ({...prev, [e.target.name] : e.target.user}))
-// }
-//   console.log(user);
-// sita buvau ikelus prie kiekvienam inpute onChange={handleChange}
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(requestBody);
+    const url = isSignUp ? `${ServerUrl}/auth/register` : `${ServerUrl}/auth/login`;
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(requestBody),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.ok) {
+      console.log('Success')
+    } else {
+      console.log('Error', await response.text())
+    }
+  };
+
+  const inputChangeHandler = (event) => {
+    const { name, value } = event.target;
+    setRequestBody({ ...requestBody, [name]: value });
+  };
   return (
-    <div className="signup-input">
-        {isSignUp && (
+    <form onSubmit={handleSubmit} className="signup-input">
+      {isSignUp && (
         <>
           <label>{fullName}</label>
-          <input type="text" placeholder="Enter your Full Name"></input>
+          <input
+            onChange={inputChangeHandler}
+            name="fullName"
+            type="text"
+            placeholder="Enter your Full Name"
+          ></input>
           <label>{avatarUrl}</label>
-          <input  type="text" placeholder="Optional"></input>
+          <input
+            onChange={inputChangeHandler}
+            name="avatarURL"
+            type="text"
+            placeholder="Optional"
+          ></input>
         </>
       )}
       <label>{email}</label>
-      <input type="text" placeholder="Enter your email"></input>
-      <label>{passwordHash}</label>
-      <input type="password" placeholder="Enter your password"></input>
-      <button className="signup-btn">{buttonText}</button>
-    </div>
+      <input
+        onChange={inputChangeHandler}
+        name="email"
+        type="text"
+        placeholder="Enter your email"
+      ></input>
+      <label>{password}</label>
+      <input
+        onChange={inputChangeHandler}
+        name="password"
+        type="password"
+        placeholder="Enter your password"
+      ></input>
+      <button type="submit" className="signup-btn">
+        {buttonText}
+      </button>
+    </form>
   );
 };
 

@@ -10,7 +10,7 @@ const SignUpPage = () => {
       <div className='signup-wrapper'>
         <div className='signup-main'>
           <h1>We Need Some Information</h1>
-          <InputForm fullName='Full Name' email='Email' passwordHash='Password' avatarUrl='Avatar URL' buttonText='Sign Up' isSignUp={true}/>
+          <InputForm fullName='Full Name' email='Email' password='Password' avatarUrl='Avatar URL' buttonText='Sign Up' isSignUp={true}/>
         </div>
       </div>
     </div>

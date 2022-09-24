@@ -1,5 +1,5 @@
 import "./submitPage.css"
-import SubmitForm from "../../components/submitForm/SubmitForm";
+import SubmitRecipeForm from "../../components/submitForm/SubmitRecipeForm";
 
 const SubmitPage = () => {
   return (
@@ -8,7 +8,7 @@ const SubmitPage = () => {
         <div className='submit-main'>
           <h1>Submit Your Recipe</h1>
           <p>Share your amazing recipe with thousands of people across the world. Fill our form to get started.</p>
-          <SubmitForm email='Email' recipeName='Recipe Name' description='Description' ingredients='Ingredients' buttonText='Submit Recipe'/>
+          <SubmitRecipeForm />
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import './navbar.css'
 const Navbar = () => {
     const [showSidebar, setShowSidear] = useState(false);
     const location = useLocation();
-    const links = [
+    let links = [
         {
             name: "Top Chefs",
             path: "/topchefs",
@@ -45,10 +45,20 @@ const Navbar = () => {
             icon: faCog,
         }
     ]
+    let loginInformation = JSON.parse(localStorage.getItem("loginInformation")) || {};
+    let token = loginInformation.token;
+    console.log(links)
+    if (token) {
+        links.splice(4, 2);
+        console.log(links)
+    }
+    
 
     function closeSidebar(){
         setShowSidear(false)
     }
+
+    
 
   return (
     <>

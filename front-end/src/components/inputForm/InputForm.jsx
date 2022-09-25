@@ -18,12 +18,15 @@ const InputForm = ({
     const url = isSignUp ? `${ServerUrl}/auth/register` : `${ServerUrl}/auth/login`;
     const response = await fetch(url, {
       method: "POST",
-      body: JSON.stringify(requestBody),
+      body: JSON.stringify(requestBody), 
       headers: {
         "Content-Type": "application/json",
       },
     });
+    
     if (response.ok) {
+     let result = await response .json()
+     localStorage.setItem("loginInformation", JSON.stringify(result));
       console.log('Success')
     } else {
       console.log('Error', await response.text())
@@ -80,7 +83,7 @@ const InputForm = ({
         name="password"
         type="password"
         placeholder="Enter your password"
-        pattern="(.*[a-z]){5}"
+        //pattern="(.*[a-z]){5}"
       ></input>
       <span className="errorMessage">Password shoud be at least 5 characters long</span>
       <button type="submit" className="signup-btn">

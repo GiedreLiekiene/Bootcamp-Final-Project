@@ -12,14 +12,17 @@ const SubmitRecipeForm = ({
   // * do not allow submit a recipie if you don't have a token - send to logic/singup
   // TODO :
   // * send user photo in signup form
+  let loginInformation = JSON.parse(localStorage.getItem("loginInformation")) || {};
+  console.log(loginInformation)
+  let token = loginInformation.token;
+  let userId = loginInformation._id;
 
   const [requestBody, setRequestBody] = useState({
-    userId: "632f73336d3fe7601c3ee338",
+    userId: userId,
     imageUrl: "/uploads/Baja-Pork-takos.jpeg",
     sections: ["breakfast"]
   });
 
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzJmNzMzMzZkM2ZlNzYwMWMzZWUzMzgiLCJpYXQiOjE2NjQwNTczMzksImV4cCI6MTY2NjY0OTMzOX0.my4hUNg1dI6Up5w-Qw6GvEpeqigzYDM9ijXJIQh3Gfo"
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(requestBody);

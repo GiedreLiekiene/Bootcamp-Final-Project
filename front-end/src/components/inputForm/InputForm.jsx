@@ -83,7 +83,7 @@ const InputForm = ({
         name="password"
         type="password"
         placeholder="Enter your password"
-        //pattern="(.*[a-z]){5}"
+        pattern="(.*[a-z]){5}"
       ></input>
       <span className="errorMessage">Password shoud be at least 5 characters long</span>
       <button type="submit" className="signup-btn">

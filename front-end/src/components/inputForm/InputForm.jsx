@@ -41,6 +41,9 @@ const InputForm = ({
   const handleFocus = (e) => {
     setFocused(true);
   }
+
+  const emailErrorMessage = isSignUp ? "Please enter a valid email address" : "This email is not registered";
+  const passwordErrorMessage = isSignUp ? "Password shoud be at least 5 characters long" : "Password is not correct";
   return (
     <form onSubmit={handleSubmit} className="signup-input">
       {isSignUp && (
@@ -74,7 +77,7 @@ const InputForm = ({
         type="email"
         placeholder="Enter your email"
       ></input>
-      <span className="errorMessage">Please enter a valid email address</span>
+      <span className="errorMessage">{emailErrorMessage}</span>
       <label>{password}</label>
       <input
         onChange={inputChangeHandler}
@@ -86,7 +89,7 @@ const InputForm = ({
         pattern="(.*[A-Za-z0-9]){5}"
         onFocus={() => setFocused(true)}
       ></input>
-      <span className="errorMessage">Password shoud be at least 5 characters long</span>
+      <span className="errorMessage">{passwordErrorMessage}</span>
       <button type="submit" className="signup-btn">
         {buttonText}
       </button>

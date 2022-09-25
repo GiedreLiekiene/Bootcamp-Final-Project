@@ -34,17 +34,25 @@ const InputForm = ({
     const { name, value } = event.target;
     setRequestBody({ ...requestBody, [name]: value });
   };
+  // const [focused, setFocused] = useState(false)
+  // const handleFocus =(e) => {
+  //   setFocused(true);
+  // }
   return (
     <form onSubmit={handleSubmit} className="signup-input">
       {isSignUp && (
         <>
           <label>{fullName}</label>
-          <input
+          <input            
             onChange={inputChangeHandler}
+            // onBlur={handleFocus}
+            // focused={focused}
             name="fullName"
             type="text"
             placeholder="Enter your Full Name"
+            pattern="(.*[a-z]){3}"            
           ></input>
+          <span className="errorMessage">Full Name must be at least 3 characters long</span>
           <label>{avatarUrl}</label>
           <input
             onChange={inputChangeHandler}
@@ -57,17 +65,24 @@ const InputForm = ({
       <label>{email}</label>
       <input
         onChange={inputChangeHandler}
+        // onBlur={handleFocus}
+        // focused={focused}
         name="email"
-        type="text"
+        type="email"
         placeholder="Enter your email"
       ></input>
+      <span className="errorMessage">Please enter a valid email address</span>
       <label>{password}</label>
       <input
         onChange={inputChangeHandler}
+        // onBlur={handleFocus}
+        // focused={focused}
         name="password"
         type="password"
         placeholder="Enter your password"
+        pattern="(.*[a-z]){5}"
       ></input>
+      <span className="errorMessage">Password shoud be at least 5 characters long</span>
       <button type="submit" className="signup-btn">
         {buttonText}
       </button>

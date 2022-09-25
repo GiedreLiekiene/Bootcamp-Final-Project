@@ -53,7 +53,7 @@ const InputForm = ({
             name="fullName"
             type="text"
             placeholder="Enter your Full Name"
-            pattern="(.*[a-z]){3}"            
+            pattern="(.*[A-Za-z0-9]){3}"            
           ></input>
           <span className="errorMessage">Full Name must be at least 3 characters long</span>
           <label>{avatarUrl}</label>
@@ -83,7 +83,7 @@ const InputForm = ({
         name="password"
         type="password"
         placeholder="Enter your password"
-        pattern="(.*[a-z]){5}"
+        pattern="(.*[A-Za-z0-9]){5}"
       ></input>
       <span className="errorMessage">Password shoud be at least 5 characters long</span>
       <button type="submit" className="signup-btn">

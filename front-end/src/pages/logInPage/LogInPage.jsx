@@ -1,4 +1,5 @@
 import InputForm from '../../components/inputForm/InputForm'
+import LoginHeader from '../../components/loginHeader/LoginHeader'
 import './login.css'
 
 const LogInPage = () => {
@@ -6,7 +7,7 @@ const LogInPage = () => {
     <div className='login'>
       <div className='login-wrapper'>
         <div className='login-main'>
-          <h1>Welcome Back</h1>
+          <LoginHeader h1="Welcome Back" />
           <InputForm fullName='Full Name' email='Email' password='Password' avatarUrl='Avatar URL' buttonText='Login'/>
         </div>
       </div>

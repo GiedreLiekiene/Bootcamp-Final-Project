@@ -15,6 +15,7 @@
 .login-input input {
     width: 100%;
     border: none;
+    border-radius: 5px;
     padding: 15px 10px;
     box-shadow: 0 5px 10px var(--shadow-color);
     font-size: 1em;
@@ -50,11 +51,12 @@
     color: red;
     display: none;
 }
-input:invalid {
-    border: 1px solid red;
+input:invalid[focused="true"] {
+    border: 2px solid red;
+    border-radius: 5px;
 }
 
-input:invalid ~ span {
+input:invalid[focused="true"] ~ span {
     display: block;
     
 }

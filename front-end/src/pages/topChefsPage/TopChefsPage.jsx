@@ -1,6 +1,6 @@
-import './topChefsPage.css'
-import ChefCard from '../../components/chefCard/ChefCard'
-import { Link } from "react-router-dom"
+import "./topChefsPage.css";
+import ChefCard from "../../components/chefCard/ChefCard";
+import { Link } from "react-router-dom";
 
 const TopChefsPage = () => {
   const chefs = [
@@ -8,66 +8,71 @@ const TopChefsPage = () => {
       name: "Giuseppe Ferro",
       img: "/img/top-chefs/img_1.jpg",
       recipeCount: "9",
-      cuisine: "Italian"
+      cuisine: "Italian",
     },
     {
       name: "Peter Parker",
       img: "/img/top-chefs/img_2.jpg",
       recipeCount: "23",
-      cuisine: "French"
+      cuisine: "French",
     },
     {
       name: "Chin Xi",
       img: "/img/top-chefs/img_3.jpg",
       recipeCount: "4",
-      cuisine: "Thai"
+      cuisine: "Thai",
     },
     {
       name: "Bob Marley",
       img: "/img/top-chefs/img_4.jpg",
       recipeCount: "14",
-      cuisine: "Cuban"
+      cuisine: "Cuban",
     },
     {
       name: "Lauris Stirna",
       img: "/img/top-chefs/img_5.jpg",
       recipeCount: "2",
-      cuisine: "Latvian"
+      cuisine: "Latvian",
     },
     {
       name: "Mad Max",
       img: "/img/top-chefs/img_6.jpg",
       recipeCount: "7",
-      cuisine: "Egyptian"
+      cuisine: "Egyptian",
     },
     {
       name: "Marilyn Monroe",
       img: "/img/top-chefs/img_7.jpg",
       recipeCount: "18",
-      cuisine: "Polish"
+      cuisine: "Polish",
     },
     {
       name: "Wonder Woman",
       img: "/img/top-chefs/img_8.jpg",
       recipeCount: "100",
-      cuisine: "Lithuanian"
-    }
-  ]
-  
+      cuisine: "Lithuanian",
+    },
+  ];
+
   return (
     <>
-    <div className='chefs-section'> 
-        <h1 className='chefs-section-title'>Our Top Chefs</h1>
-        <div className='top-chefs-container'>
-            { chefs.map((chef) => <ChefCard key={chef.name} chef={chef}/>) }
+      <div className="chefs-section">
+        <h1 className="chefs-section-title">Our Top Chefs</h1>
+        <div className="top-chefs-container">
+          {chefs.map((chef) => (
+            <ChefCard key={chef.name} chef={chef} />
+          ))}
         </div>
-    </div>
-    <div className='btn-wrapper'>
-      <Link to="/deletelauris" ><button className='delete-lauris'>Would you like to delete Lauris?</button></Link>
-    </div>
-    
+      </div>
+      <div className="btn-wrapper">
+        <Link to="/deletelauris">
+          <button className="delete-lauris">
+            Would you like to delete Lauris?
+          </button>
+        </Link>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default TopChefsPage
+export default TopChefsPage;

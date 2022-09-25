@@ -18,6 +18,7 @@ import SignUpPage from "./pages/signUpPage/SignUpPage";
 import SettingsPage from "./pages/settingsPage/Settings";
 import TopChefsPage from "./pages/topChefsPage/TopChefsPage";
 import DeleteLauris from "./pages/deleteLaurisPage/DeleteLauris";
+import ViewRecipePage from "./pages/recipesPage/ViewRecipePage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/topchefs" element={<TopChefsPage />} />
           <Route path="/recipes" element={<RecipesPage />} />
+          <Route path="/recipe" element={<ViewRecipePage />} />
           <Route path="/submit" element={<SubmitRecipePage />} />
           <Route path="/contacts" element={<ContactUsPage />} />
           <Route path="/login" element={<LogInPage />} />

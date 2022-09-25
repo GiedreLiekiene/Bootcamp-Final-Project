@@ -53,7 +53,7 @@ const InputForm = ({
             name="fullName"
             type="text"
             placeholder="Enter your Full Name"
-            pattern="(.*[A-Za-z0-9]){3}"            
+            pattern="(.*[A-Za-z0-9 ]){3}"            
           ></input>
           <span className="errorMessage">Full Name must be at least 3 characters long</span>
           <label>{avatarUrl}</label>

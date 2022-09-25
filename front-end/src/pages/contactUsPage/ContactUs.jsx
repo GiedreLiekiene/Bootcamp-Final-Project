@@ -1,5 +1,6 @@
 import './contactUs.css'
-import { FaFacebookF, FaTwitter, FaInstagramSquare } from "react-icons/fa";
+
+import SocialsLinks from '../../components/socials links/SocialsLinks';
 
 const ContactUs = () => {
   return (
@@ -10,16 +11,11 @@ const ContactUs = () => {
             <p>+370 6060 1234</p>
             <p><div className="mapouter">
                 <div className="gmap_canvas">
-                    <iframe className="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Pastry str. 13, Utena&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                    <iframe className="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Pastry str. 13, Utena&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" title='Pastry str. 13, Utena, Lithuania'></iframe>
                     </div>
                     </div>Pastry str. 13, Utena, Lithuania</p>
         </div>
-        <div className="contactUs-section">
-            <h1 className="contactUs-section-title">Socials</h1>
-            <p className='social-icon'> <a href="https://www.facebook.com"><FaFacebookF/>  Facebook</a></p>
-            <p className='social-icon'><a href="https://www.twitter.com"><FaTwitter/>  Twitter</a></p>
-            <p className='social-icon'><a href="https://www.instagram.com"><FaInstagramSquare />  Instagram</a></p>
-        </div>
+        <SocialsLinks />
     </div>
   )
 }

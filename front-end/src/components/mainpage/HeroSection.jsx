@@ -20,7 +20,7 @@ const HeroSection = () => {
         <div className="col typography">
             <h1 className="title">Huge selection of delicious recipe ideas</h1>
             <p className="info">Find the perfect recipe for any occasion. Explore our huge selection of delicious recipe ideas including: easy desserts, delicious vegan and vegetarian dinner ideas, gorgeous pasta recipes, quick bakes, family-friendly meals and gluten-free recipes.</p>
-            <button className="btn">Explore now</button>
+            <a className="btn" href="/recipes">Explore now</a>
         </div>
         <div className="col gallery">
           { images.map((src, index) => (

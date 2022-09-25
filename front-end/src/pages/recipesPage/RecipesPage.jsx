@@ -6,6 +6,7 @@ import CategoriesSection from '../../components/mainpage/CategoriesSection';
 import './recipesPage.css';
 import { ServerUrl } from '../../config';
 
+
 const RecipesPage = () => {
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category");
@@ -37,6 +38,9 @@ const RecipesPage = () => {
       {recipes.map((recipe, index) => (
         <RecipeCard key={index} recipe={recipe} />
       ))}
+    </div>
+    <div className='load-btn-container'>
+      <button className="load-btn">LOAD MORE</button>
     </div>
     
     </>

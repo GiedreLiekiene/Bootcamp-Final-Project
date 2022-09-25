@@ -21,7 +21,7 @@ const RecipesPage = () => {
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-        //response=response.slice(0, 8)
+        response=response.slice(0, 8)
         response.sort(() => Math.random() - 0.5)
         setRecipes(response);        
       })

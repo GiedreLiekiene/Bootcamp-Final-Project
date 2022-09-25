@@ -45,11 +45,22 @@ const Navbar = () => {
             icon: faCog,
         }
     ]
+
+    function logout() {
+        localStorage.removeItem("loginInformation");
+        window.location.reload();
+    }
+
     let loginInformation = JSON.parse(localStorage.getItem("loginInformation")) || {};
     let token = loginInformation.token;
     console.log(links)
     if (token) {
         links.splice(4, 2);
+        links.push({
+            name: "Logout",
+            onClick: logout,
+            icon: faKey,
+        })
         console.log(links)
     }
     
@@ -58,10 +69,7 @@ const Navbar = () => {
         setShowSidear(false)
     }
 
-    function logout() {
-        localStorage.removeItem("loginInformation");
-        window.location.reload();
-    }
+    
 
   return (
     <>
@@ -69,9 +77,8 @@ const Navbar = () => {
         <Link to="/" className='logo'>Yum<span>my Coo</span>king</Link>
         <div className='nav-links'>
                 {links.map(link => (
-                    <Link className={location.pathname === link.path ? "active" : "" } to={link.path} key={link.name}>{link.name}</Link>
+                    <Link className={location.pathname === link.path ? "active" : "" } to={link.path} key={link.name} onClick={link.onClick}>{link.name}</Link>
                 ))}
-                {token && <Link to="/logout" onClick={logout} key="logout">Logout</Link>}
         </div> 
         <div onClick={() => setShowSidear(!showSidebar)} className={showSidebar ? 'sidebar-btn active' : 'sidebar-btn'}>
             <div className='bar'></div>

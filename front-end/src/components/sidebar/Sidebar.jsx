@@ -8,7 +8,7 @@ const Sidebar = ({ links, close }) => {
     <div className="sidebar" onClick={close}>
       <Link to="/" className='logo'>Yum<span>my Coo</span>king</Link>
       {links.map((link) => (
-        <Link to={link.path} className={location.pathname === link.path ? "sidebar-link active" : "sidebar-link" } key={link.name}>
+        <Link to={link.path} className={location.pathname === link.path ? "sidebar-link active" : "sidebar-link" } key={link.name} onClick={link.onClick}>
             <FontAwesomeIcon icon={link.icon}/>
           {link.name}
         </Link>

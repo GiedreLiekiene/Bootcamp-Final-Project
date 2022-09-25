@@ -6,8 +6,7 @@ const SubmitRecipeForm = ({
 }) => {
   // TODO : 
   // * send recipe photo in this form (extra request for upload)
-  // * send sections in this form - needs UI with checkboxes
-  // * do not allow submit a recipie if you don't have a token - send to login/singup
+  // * send sections in this form - needs UI with checkboxes 
   // TODO :
   // * send user photo in signup form
   let loginInformation = JSON.parse(localStorage.getItem("loginInformation")) || {};
@@ -17,17 +16,47 @@ const SubmitRecipeForm = ({
 
   const [requestBody, setRequestBody] = useState({
     userId: userId,
-    imageUrl: "/uploads/Baja-Pork-takos.jpeg",
     sections: ["breakfast"]
   });
+
+  const uploadImage = async (imageFile) => {
+    const url = `${ServerUrl}/upload`;
+
+    //console.log(imageFile, imageFile.name, typeof(imageFile))
+
+    let data = new FormData()
+    data.append('image', imageFile, imageFile.name)
+
+    const response = await fetch(url, {
+      method: "POST",
+      body: data,
+      headers: {
+        "Authorization": `Bearer ${token}`
+      },
+    });
+    if (response.ok) {
+      let responseBody = await response.json();
+      console.log('Success', responseBody)       
+      return responseBody.url;
+    } else {
+      let error = await response.text();
+      console.log('Error', error)
+      throw `Failed to upload image: ${error}`;
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(requestBody);
+
+    let { imageFile, ...body } = requestBody;
+
+    body.imageUrl = await uploadImage(imageFile);
+
     const url = `${ServerUrl}/recipes`;
     const response = await fetch(url, {
       method: "POST",
-      body: JSON.stringify(requestBody),
+      body: JSON.stringify(body),
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`
@@ -43,6 +72,11 @@ const SubmitRecipeForm = ({
   const inputChangeHandler = (event) => {
     const { name, value } = event.target;
     setRequestBody({ ...requestBody, [name]: value });
+  };
+
+  const imageChangeHandler = (event) => {
+    const { name, files } = event.target;
+    setRequestBody({ ...requestBody, [name]: files[0] });
   };
 
   if (!token) {
@@ -76,6 +110,12 @@ const SubmitRecipeForm = ({
         name="description"
         type="text"
         placeholder="Describe your recipe"
+      ></input>
+      <label>Image</label>
+      <input
+        onChange={imageChangeHandler}
+        name="imageFile"
+        type="file"        
       ></input>
       <button type="submit" className="signup-btn">
         Submit Recipe

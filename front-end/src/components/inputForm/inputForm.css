@@ -49,14 +49,9 @@
     font-size: 0.7em;
     padding: 0.7em;
     color: red;
-    display: none;
 }
-input:invalid[focused="true"] {
+.input-error {
     border: 2px solid red;
     border-radius: 5px;
-}
-
-input:invalid[focused="true"] ~ span {
-    display: block;
-    
+    outline: none;
 }

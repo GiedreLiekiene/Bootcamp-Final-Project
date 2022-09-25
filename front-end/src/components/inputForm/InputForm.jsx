@@ -25,7 +25,7 @@ const InputForm = ({
     });
     
     if (response.ok) {
-     let result = await response .json()
+     let result = await response.json()
      localStorage.setItem("loginInformation", JSON.stringify(result));
       console.log('Success')
     } else {
@@ -37,10 +37,10 @@ const InputForm = ({
     const { name, value } = event.target;
     setRequestBody({ ...requestBody, [name]: value });
   };
-  // const [focused, setFocused] = useState(false)
-  // const handleFocus =(e) => {
-  //   setFocused(true);
-  // }
+  const [focused, setFocused] = useState(false);
+  const handleFocus = (e) => {
+    setFocused(true);
+  }
   return (
     <form onSubmit={handleSubmit} className="signup-input">
       {isSignUp && (
@@ -48,12 +48,12 @@ const InputForm = ({
           <label>{fullName}</label>
           <input            
             onChange={inputChangeHandler}
-            // onBlur={handleFocus}
-            // focused={focused}
+            onBlur={handleFocus}
+            focused={focused.toString()}
             name="fullName"
             type="text"
             placeholder="Enter your Full Name"
-            pattern="(.*[A-Za-z0-9]){3}"            
+            pattern="(.*[A-Za-z0-9 ]){3}"            
           ></input>
           <span className="errorMessage">Full Name must be at least 3 characters long</span>
           <label>{avatarUrl}</label>
@@ -68,8 +68,8 @@ const InputForm = ({
       <label>{email}</label>
       <input
         onChange={inputChangeHandler}
-        // onBlur={handleFocus}
-        // focused={focused}
+        onBlur={handleFocus}
+        focused={focused.toString()}
         name="email"
         type="email"
         placeholder="Enter your email"
@@ -78,12 +78,13 @@ const InputForm = ({
       <label>{password}</label>
       <input
         onChange={inputChangeHandler}
-        // onBlur={handleFocus}
-        // focused={focused}
+        onBlur={handleFocus}
+        focused={focused.toString()}
         name="password"
         type="password"
         placeholder="Enter your password"
         pattern="(.*[A-Za-z0-9]){5}"
+        onFocus={() => setFocused(true)}
       ></input>
       <span className="errorMessage">Password shoud be at least 5 characters long</span>
       <button type="submit" className="signup-btn">

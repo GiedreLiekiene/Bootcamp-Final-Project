@@ -38,41 +38,6 @@ const Settings = () => {
         "--text-light": "#eceaea",
         }
     ]
-    function changeTheme(i) {
-        const _theme = {...themes[i]}
-        setTheme(i === 0 ? "light" : "dark")
-        // update settings
-        let _settings = {...settings}
-        for (let key in _theme){
-            _settings[key] = _theme[key]
-        }
-        setSettings(_settings)
-    }
-
-    function changeColor(i) {
-        const _color = primaryColors[i]
-        let _settings = {...settings}
-        _settings["--primary-color"] = _color
-        setPrimaryColor(i)
-        setSettings(_settings)
-    }
-
-    function changeFontsize(i){
-        const _size = fontSizes[i]
-        let _settings = {...settings}
-        _settings["--font-size"] = _size.value
-        setFontSize(i)
-        setSettings(_settings)
-    }
-    function changeAnimationSpeed(i){
-        const _speed = animationSpeeds[i]
-        let _settings = {...settings}
-        _settings["--animation-speed"] = _speed.value
-        setAnimationSpeed(i)
-        setSettings(_settings)
-    }
-
-
     const primaryColors =[
         "rgb(255, 139, 158)",
         "rgb(33, 150, 243)",
@@ -111,6 +76,40 @@ const Settings = () => {
     const [primaryColor, setPrimaryColor] = useState(0)
     const [fontSize, setFontSize] = useState(1)
     const [animationSpeed, setAnimationSpeed] = useState(1);
+    
+    function changeTheme(i) {
+        const _theme = {...themes[i]}
+        setTheme(i === 0 ? "light" : "dark")
+        // update settings
+        let _settings = {...settings}
+        for (let key in _theme){
+            _settings[key] = _theme[key]
+        }
+        setSettings(_settings)
+    }
+    function changeColor(i) {
+        const _color = primaryColors[i]
+        let _settings = {...settings}
+        _settings["--primary-color"] = _color
+        setPrimaryColor(i)
+        setSettings(_settings)
+    }
+    function changeFontsize(i){
+        const _size = fontSizes[i]
+        let _settings = {...settings}
+        _settings["--font-size"] = _size.value
+        setFontSize(i)
+        setSettings(_settings)
+    }
+    function changeAnimationSpeed(i){
+        const _speed = animationSpeeds[i]
+        let _settings = {...settings}
+        _settings["--animation-speed"] = _speed.value
+        setAnimationSpeed(i)
+        setSettings(_settings)
+    }
+    
+    
   return (
     <div>
         <div className='settings-section'>
@@ -168,8 +167,7 @@ const Settings = () => {
                 ))}
             </div>
         </div>
-    </div>      
-    
+    </div>     
   )
 }
 

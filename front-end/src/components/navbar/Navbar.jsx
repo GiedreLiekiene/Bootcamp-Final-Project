@@ -58,7 +58,10 @@ const Navbar = () => {
         setShowSidear(false)
     }
 
-    
+    function logout() {
+        localStorage.removeItem("loginInformation");
+        window.location.reload();
+    }
 
   return (
     <>
@@ -68,6 +71,7 @@ const Navbar = () => {
                 {links.map(link => (
                     <Link className={location.pathname === link.path ? "active" : "" } to={link.path} key={link.name}>{link.name}</Link>
                 ))}
+                {token && <Link to="/logout" onClick={logout} key="logout">Logout</Link>}
         </div> 
         <div onClick={() => setShowSidear(!showSidebar)} className={showSidebar ? 'sidebar-btn active' : 'sidebar-btn'}>
             <div className='bar'></div>

@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(85vh - 55px);
+    height: calc(75vh - 55px);
 }
 .signup-main h1 {
     margin-top: 1em;

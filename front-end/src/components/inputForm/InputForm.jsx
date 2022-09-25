@@ -28,11 +28,16 @@ const InputForm = ({
      let result = await response.json()
      localStorage.setItem("loginInformation", JSON.stringify(result));
       console.log('Success')
+      let form = e.target;
+      Array.from(form.elements).forEach(element => {
+        element.value = "";
+      });
     } else { 
       const errorObj = await response.json();
       setBackendError(errorObj.message)
       console.log('Error', await response.text())
     }
+      
   };
 
   const inputChangeHandler = (event) => {
@@ -65,7 +70,7 @@ const InputForm = ({
 
   const [errors, setErrors] = useState({});
   const [backendError, setBackendError] = useState();
-
+  
   return (
     <form onSubmit={handleSubmit} className="signup-input">
       {isSignUp && (
@@ -80,10 +85,10 @@ const InputForm = ({
           ></input>
           { errors.fullName && <span className="errorMessage">{errors.fullName}</span>}
           <label>{avatarUrl}</label>
-          <input
+          <input className="input-avatar"
             onChange={inputChangeHandler}
             name="avatarURL"
-            type="text"
+            type="file"
             placeholder="Optional"
           ></input>
         </>

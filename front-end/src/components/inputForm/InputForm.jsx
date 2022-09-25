@@ -28,7 +28,9 @@ const InputForm = ({
      let result = await response.json()
      localStorage.setItem("loginInformation", JSON.stringify(result));
       console.log('Success')
-    } else {
+    } else { 
+      const errorObj = await response.json();
+      setBackendError(errorObj.message)
       console.log('Error', await response.text())
     }
   };
@@ -36,14 +38,34 @@ const InputForm = ({
   const inputChangeHandler = (event) => {
     const { name, value } = event.target;
     setRequestBody({ ...requestBody, [name]: value });
+    switch(event.target.name) {
+      case "fullName" : 
+        if(value.length < 3) {
+          setErrors({...errors, ["fullName"] : "Full Name must be at least 3 characters long"})
+        } else {
+          setErrors({...errors, ["fullName"] : null})
+        }
+        break;
+      case "email" : 
+        if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+          setErrors({...errors, ["email"] : "Please enter a valid email"})
+        } else {
+          setErrors({...errors, ["email"] : null})
+        }
+        break;
+      case "password" : 
+        if(value.length < 5) {
+          setErrors({...errors, ["password"] : "Full Name must be at least 5 characters long"})
+        } else {
+          setErrors({...errors, ["password"] : null})
+        }
+        break;
+    } console.log(errors)
   };
-  const [focused, setFocused] = useState(false);
-  const handleFocus = (e) => {
-    setFocused(true);
-  }
 
-  const emailErrorMessage = isSignUp ? "Please enter a valid email address" : "This email is not registered";
-  const passwordErrorMessage = isSignUp ? "Password shoud be at least 5 characters long" : "Password is not correct";
+  const [errors, setErrors] = useState({});
+  const [backendError, setBackendError] = useState();
+
   return (
     <form onSubmit={handleSubmit} className="signup-input">
       {isSignUp && (
@@ -51,14 +73,12 @@ const InputForm = ({
           <label>{fullName}</label>
           <input            
             onChange={inputChangeHandler}
-            onBlur={handleFocus}
-            focused={focused.toString()}
+            className={errors.fullName ? "input-error": null}
             name="fullName"
             type="text"
-            placeholder="Enter your Full Name"
-            pattern="(.*[A-Za-z0-9 ]){3}"            
+            placeholder="Enter your Full Name"        
           ></input>
-          <span className="errorMessage">Full Name must be at least 3 characters long</span>
+          { errors.fullName && <span className="errorMessage">{errors.fullName}</span>}
           <label>{avatarUrl}</label>
           <input
             onChange={inputChangeHandler}
@@ -71,28 +91,26 @@ const InputForm = ({
       <label>{email}</label>
       <input
         onChange={inputChangeHandler}
-        onBlur={handleFocus}
-        focused={focused.toString()}
         name="email"
         type="email"
         placeholder="Enter your email"
+        className={errors.email && "input-error"}
       ></input>
-      <span className="errorMessage">{emailErrorMessage}</span>
+      { errors.email && <span className="errorMessage">{errors.email}</span>}
       <label>{password}</label>
       <input
         onChange={inputChangeHandler}
-        onBlur={handleFocus}
-        focused={focused.toString()}
         name="password"
         type="password"
-        placeholder="Enter your password"
-        pattern="(.*[A-Za-z0-9]){5}"
-        onFocus={() => setFocused(true)}
+        placeholder="Enter your password"      
+        className={errors.password && "input-error"}  
       ></input>
-      <span className="errorMessage">{passwordErrorMessage}</span>
+      { errors.password && <span className="errorMessage">{errors.password}</span>}
+      { backendError && <span className="errorMessage">{backendError}</span>}
       <button type="submit" className="signup-btn">
         {buttonText}
       </button>
+      
     </form>
   );
 };

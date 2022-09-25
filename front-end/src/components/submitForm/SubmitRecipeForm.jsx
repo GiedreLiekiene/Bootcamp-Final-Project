@@ -5,7 +5,6 @@ import "./submitRecipeForm.css";
 const SubmitRecipeForm = ({
 }) => {
   // TODO : 
-  // * send recipe photo in this form (extra request for upload)
   // * send sections in this form - needs UI with checkboxes 
   // TODO :
   // * send user photo in signup form
@@ -47,6 +46,8 @@ const SubmitRecipeForm = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+
     console.log(requestBody);
 
     let { imageFile, ...body } = requestBody;
@@ -62,7 +63,12 @@ const SubmitRecipeForm = ({
         "Authorization": `Bearer ${token}`
       },
     });
+    
     if (response.ok) {
+      let form = e.target;
+      Array.from(form.elements).forEach(element => {
+        element.value = "";
+      });
       console.log('Success')
     } else {
       console.log('Error', await response.text())
@@ -86,6 +92,8 @@ const SubmitRecipeForm = ({
         <a className="login-to-submit-btn" href="/login">Login</a>
       </div>
     )
+  } else {
+
   }
 
   return (

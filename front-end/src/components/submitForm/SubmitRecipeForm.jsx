@@ -5,21 +5,22 @@ import "./submitRecipeForm.css";
 const SubmitRecipeForm = ({
 }) => {
   // TODO : 
-  // * remember token and userId after login (and signup?) - use cookies???
-  // * send token&userId in this form
   // * send recipe photo in this form (extra request for upload)
   // * send sections in this form - needs UI with checkboxes
-  // * do not allow submit a recipie if you don't have a token - send to logic/singup
+  // * do not allow submit a recipie if you don't have a token - send to login/singup
   // TODO :
   // * send user photo in signup form
+  let loginInformation = JSON.parse(localStorage.getItem("loginInformation")) || {};
+  console.log(loginInformation)
+  let token = loginInformation.token;
+  let userId = loginInformation._id;
 
   const [requestBody, setRequestBody] = useState({
-    userId: "632f73336d3fe7601c3ee338",
+    userId: userId,
     imageUrl: "/uploads/Baja-Pork-takos.jpeg",
     sections: ["breakfast"]
   });
 
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzJmNzMzMzZkM2ZlNzYwMWMzZWUzMzgiLCJpYXQiOjE2NjQwNTczMzksImV4cCI6MTY2NjY0OTMzOX0.my4hUNg1dI6Up5w-Qw6GvEpeqigzYDM9ijXJIQh3Gfo"
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(requestBody);
@@ -43,6 +44,16 @@ const SubmitRecipeForm = ({
     const { name, value } = event.target;
     setRequestBody({ ...requestBody, [name]: value });
   };
+
+  if (!token) {
+    return (
+      <div className="login-to-submit-container">
+        <h1 className>You need to login to submit a recipe</h1>
+        <a className="login-to-submit-btn" href="/login">Login</a>
+      </div>
+    )
+  }
+
   return (
     <form onSubmit={handleSubmit} className="signup-input">
       <label>Recipe Name</label>

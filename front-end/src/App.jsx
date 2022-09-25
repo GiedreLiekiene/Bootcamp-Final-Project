@@ -11,13 +11,14 @@ import './App.css';
 
 import HomePage from "./pages/homePage/HomePage"; 
 import RecipesPage from "./pages/recipesPage/RecipesPage";
-import SubmitPage from "./pages/submitPage/SubmitPage";
+import SubmitRecipePage from "./pages/submitPage/SubmitRecipePage";
 import ContactUsPage from "./pages/contactUsPage/ContactUs";
 import LogInPage from "./pages/logInPage/LogInPage";
 import SignUpPage from "./pages/signUpPage/SignUpPage";
 import SettingsPage from "./pages/settingsPage/Settings";
 import TopChefsPage from "./pages/topChefsPage/TopChefsPage";
 import DeleteLauris from "./pages/deleteLaurisPage/DeleteLauris";
+import ViewRecipePage from "./pages/recipesPage/ViewRecipePage";
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/topchefs" element={<TopChefsPage />} />
           <Route path="/recipes" element={<RecipesPage />} />
-          <Route path="/submit" element={<SubmitPage />} />
+          <Route path="/recipe" element={<ViewRecipePage />} />
+          <Route path="/submit" element={<SubmitRecipePage />} />
           <Route path="/contacts" element={<ContactUsPage />} />
           <Route path="/login" element={<LogInPage />} />
           <Route path="/signup" element={<SignUpPage />} />

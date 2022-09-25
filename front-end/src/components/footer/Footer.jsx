@@ -6,7 +6,7 @@ const Footer = () => {
     <div className='footer container'>
         <div className="footer-section">
             <div className="footer-section-title">YummyCooking.com</div>
-            <p>Made by Giedre Liekiene, Olga Volkova and Diana Zukauskiene</p>
+            <p>Created by Giedre Liekiene, Olga Volkova and Diana Zukauskiene</p>
             <p>&copy; 2022 | All rights reserved</p>
         </div>
         <div className="footer-section">

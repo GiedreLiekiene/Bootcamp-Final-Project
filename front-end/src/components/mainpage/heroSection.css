@@ -92,8 +92,8 @@
 .btn {
     border: none;
     outline: none;
-    background-color: pink;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     padding: .75em 1em;
     text-transform: uppercase;
     font-size: 1em;

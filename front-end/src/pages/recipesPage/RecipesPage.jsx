@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import PreviousSearches from '../../components/recipespage/PreviousSearches';
 import RecipeCard from './RecipeCard';
@@ -22,12 +22,19 @@ const RecipesPage = () => {
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-        response=response.slice(0, 8)
         response.sort(() => Math.random() - 0.5)
         setRecipes(response);        
       })
       .catch((err) => console.error(err));
   }, [category]);
+
+  const [maxRecipesCount, setMaxRecipesCount] = useState(8);
+
+  const trimmedRecipes = useMemo(() => {
+    return recipes.slice(0, maxRecipesCount);
+  }, [maxRecipesCount, recipes]);
+
+  const showLoadMoreBtn = recipes.length > maxRecipesCount;
 
   return (
     <>
@@ -35,13 +42,19 @@ const RecipesPage = () => {
     <CategoriesSection />
     <div className='recipes-container'>
       {/* <RecipeCard /> */}
-      {recipes.map((recipe, index) => (
+      {trimmedRecipes.map((recipe, index) => (
         <RecipeCard key={index} recipe={recipe} />
       ))}
     </div>
+    {showLoadMoreBtn && (
     <div className='load-btn-container'>
-      <button className="load-btn">LOAD MORE</button>
-    </div>
+      <button className="load-btn"
+        onClick={() => {
+          setMaxRecipesCount(maxRecipesCount + 4);
+        }}>
+          LOAD MORE
+      </button>
+    </div>)}
     
     </>
   )

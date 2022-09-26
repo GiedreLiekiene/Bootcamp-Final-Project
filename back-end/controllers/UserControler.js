@@ -47,7 +47,7 @@ export const login = async(req, res) => {
       const user = await UserModel.findOne({ email: req.body.email });
       if (!user) {
         return res.status(404).json({
-          message: 'user is not exist',
+          message: 'Please enter valid information',
         });
       }
       const isValidPass = await bcrypt.compare(

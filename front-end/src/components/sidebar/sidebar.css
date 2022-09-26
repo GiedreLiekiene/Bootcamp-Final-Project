@@ -29,7 +29,7 @@
 }
 
 .sidebar-link.active {
-    color: rgb(255, 139, 158);
+    color: var(--primary-color);
     font-weight: bold;
 }
 

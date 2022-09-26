@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Sidebar from '../sidebar/Sidebar';
 import { faBowlRice, faList, faPen, faCog, faKey, faLock, faPhone } from "@fortawesome/free-solid-svg-icons";
 import './navbar.css'
+import { getLoginInformation, removeLoginInformation } from "../../utils/loginHelpers";
 
 const Navbar = () => {
     const [showSidebar, setShowSidear] = useState(false);
@@ -47,12 +48,11 @@ const Navbar = () => {
     ]
 
     function logout() {
-        localStorage.removeItem("loginInformation");
+        removeLoginInformation();
         window.location.reload();
     }
 
-    let loginInformation = JSON.parse(localStorage.getItem("loginInformation")) || {};
-    let token = loginInformation.token;
+    let token = getLoginInformation().token;
     console.log(links)
     if (token) {
         links.splice(4, 2);

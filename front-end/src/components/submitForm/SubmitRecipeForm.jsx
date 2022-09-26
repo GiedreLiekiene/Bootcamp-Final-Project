@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ServerUrl } from "../../utils/config";
+import { getLoginInformation } from "../../utils/loginHelpers";
 import "./submitRecipeForm.css";
 
 const SubmitRecipeForm = ({
@@ -8,7 +9,7 @@ const SubmitRecipeForm = ({
   // * send sections in this form - needs UI with checkboxes 
   // TODO :
   // * send user photo in signup form
-  let loginInformation = JSON.parse(localStorage.getItem("loginInformation")) || {};
+  let loginInformation = getLoginInformation();  
   console.log(loginInformation)
   let token = loginInformation.token;
   let userId = loginInformation._id;

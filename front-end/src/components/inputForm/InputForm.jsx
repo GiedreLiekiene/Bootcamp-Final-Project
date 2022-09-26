@@ -1,6 +1,7 @@
 import "./inputForm.css";
 import { ServerUrl } from "../../utils/config";
 import { useState } from "react";
+import { setLoginInformation } from "../../utils/loginHelpers";
 
 const InputForm = ({
   fullName,
@@ -25,8 +26,8 @@ const InputForm = ({
     });
     
     if (response.ok) {
-     let result = await response.json()
-     localStorage.setItem("loginInformation", JSON.stringify(result));
+      let result = await response.json()
+      setLoginInformation(result);
       console.log('Success')
       let form = e.target;
       Array.from(form.elements).forEach(element => {

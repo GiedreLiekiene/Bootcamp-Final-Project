@@ -1,6 +1,6 @@
 import "./recipeCard.css";
 import CustomImage from '../../components/CustomImage';
-import { ServerUrl } from "../../config";
+import { ServerUrl } from "../../utils/config";
 
 
 const RecipeCard = ({recipe}) => {

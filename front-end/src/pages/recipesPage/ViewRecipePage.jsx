@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import "./viewRecipePage.css";
-import { ServerUrl } from '../../config';
+import { ServerUrl } from '../../utils/config';
 
 const ViewRecipePage = () => {
   const [searchParams] = useSearchParams();

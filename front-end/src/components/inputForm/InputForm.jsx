@@ -1,5 +1,5 @@
 import "./inputForm.css";
-import { ServerUrl } from "../../config";
+import { ServerUrl } from "../../utils/config";
 import { useState } from "react";
 
 const InputForm = ({

@@ -4,7 +4,7 @@ import PreviousSearches from '../../components/recipespage/PreviousSearches';
 import RecipeCard from '../../components/recipespage/RecipeCard';
 import CategoriesSection from '../../components/mainpage/CategoriesSection';
 import './recipesPage.css';
-import { ServerUrl } from '../../config';
+import { ServerUrl } from '../../utils/config';
 
 
 const RecipesPage = () => {

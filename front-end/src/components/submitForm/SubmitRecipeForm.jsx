@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ServerUrl } from "../../config";
+import { ServerUrl } from "../../utils/config";
 import "./submitRecipeForm.css";
 
 const SubmitRecipeForm = ({

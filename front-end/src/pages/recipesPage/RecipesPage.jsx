@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import PreviousSearches from '../../components/recipespage/PreviousSearches';
-import RecipeCard from './RecipeCard';
+import RecipeCard from '../../components/recipespage/RecipeCard';
 import CategoriesSection from '../../components/mainpage/CategoriesSection';
 import './recipesPage.css';
 import { ServerUrl } from '../../config';

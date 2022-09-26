@@ -8,7 +8,7 @@ const LogInPage = () => {
       <div className='login-wrapper'>
         <div className='login-main'>
           <LoginHeader h1="Welcome Back" />
-          <InputForm fullName='Full Name' email='Email' password='Password' avatarUrl='Avatar URL' buttonText='Login'/>
+          <InputForm email='Email' password='Password' buttonText='Login'/>
         </div>
       </div>
     </div>

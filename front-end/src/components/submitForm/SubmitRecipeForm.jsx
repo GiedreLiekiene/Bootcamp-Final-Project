@@ -15,7 +15,7 @@ const SubmitRecipeForm = ({
 
   const [requestBody, setRequestBody] = useState({
     userId: userId,
-    sections: ["lunch"]
+    sections: [""]
   });
 
   const uploadImage = async (imageFile) => {
